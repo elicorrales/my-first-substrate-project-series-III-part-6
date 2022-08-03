@@ -2,7 +2,7 @@
 
 # Verify You are Indeed Calling Deployed(Uploaded) and Instantiated Contract Methods  
   
-We assume you have participated in [Series III - Substrate Blockchain Tutorial](https://github.com/elicorrales/blockchain-tutorials/blob/main/README.md), [Part 5](https://github.com/elicorrales/my-first-substrate-project-series-III-part-5/blob/main/README.md) of this series and you know how to ```upload```, ```instantiate```, and ```call``` your contract.  
+We assume you have participated in [Series III - Substrate Blockchain Tutorial](https://github.com/elicorrales/blockchain-tutorials/blob/main/README.md#series-iii---substrate-blockchain-tutorial), [Part 5](https://github.com/elicorrales/my-first-substrate-project-series-III-part-5/blob/main/README.md) of this series and you know how to ```upload```, ```instantiate```, and ```call``` your contract.  
   
  
 Let's edit our smart-contract (lib.rs), and add a second method to it.  
