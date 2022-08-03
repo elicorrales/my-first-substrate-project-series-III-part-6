@@ -29,4 +29,18 @@ Now, build it, then start up your local contracts node in one terminal and uploa
   
 Then call the ```sayhello```, and then the ```saybye```.  
   
-Notice there are no issues with ```sayhello```, but there **is** with ```saybye```.
+Notice there are no issues with ```sayhello```, but there **is** with ```saybye```.  
+  
+**But** - there's no noticeably related output in the contracts node terminal.  
+  
+Why not?  Why didn't we see the actual panic message?  
+  
+To answer that question, we will shift over to enhancing our Javascript ```client.js```.  
+  
+Up to now, our ```client.js``` has only interact with the contracts node itself, but **not** with a contract on the node.  
+  
+The only way we have interacted (briefly) with the contract was via the command-line and using ```cargo contract call```.  
+  
+However, that way of doing things isn't very useful.  Not only do we not see any related output on the running node, but how do we retrieve anything that might be returned by calling a method on the contract?  
+  
+
