@@ -14,6 +14,7 @@ mod hello_world {
             Self {}
         }
 
+        // helpful resources
         //see https://ink.substrate.io/faq/  re debug node console messages
         //substrate-contracts-node --dev -lerror,runtime::contracts=debug
         //https://rustrepo.com/repo/paritytech-substrate-contracts-node
@@ -21,6 +22,8 @@ mod hello_world {
 
         #[ink(message)]
         pub fn sayhello(&mut self) {
+            ink_env::debug_println!("\n\nSaying Hi from 'sayhello'\n\n");
+            ink_env::debug_message("\n\nSaying Hi from sayhello()\n\n");
         }
 
         #[ink(message)]

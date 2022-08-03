@@ -1,4 +1,9 @@
 #!/usr/bin/bash
+#################################################################
+# In case you're using cmd-line 'cargo contract blah blah',
+# a convenience script useful for helping you more quickly
+# do the build->upload->instantiate->call cycle.
+#################################################################
 
 projectdir=$1;
 methodname1=$2;
@@ -15,7 +20,7 @@ fi;
 if [ "$methodname1" = "" ];
 then
   echo;
-  echo "WARNING: no methodname1";
+  echo "WARNING: no methodname1. Will not 'call' methdodname1";
   echo;
 fi;
 
@@ -23,20 +28,25 @@ fi;
 if [ "$methodname2" = "" ];
 then
   echo;
-  echo "WARNING: no methodname2";
+  echo "WARNING: no methodname2. Will not 'call' methdodname2";
   echo;
 fi;
 
 
 cd ~/MySoftwareProjects/blockchain/rust/rust-substrate-blockchain-projects/my-first-substrate-projects/my-first-project-prep-lesson/my-first-smart-contracts;
 
-cd $projectdir; # which rust smart contract project;
+#this should be the directory where Cargo.toml and lib.rs are located.
+cd $projectdir; # which rust smart contract project to work with;
 
+# these are temp files used by this script. doesnt affect anything else.
 rm -f upload.log instantiate.log 2>&1;
 
+# you may not want to do this, so just remove if not.
 echo;echo;echo "cargo update......";echo;echo;
 cargo update;
 
+# you may want to uncomment out the 2nd cargo build (for debug)
+# and comment the one with '--release'.
 echo;echo;echo "cargo contract build......";echo;echo;
 cargo +nightly contract build --release;
 #cargo +nightly contract build ;
@@ -48,6 +58,8 @@ then
   exit 1;
 fi;
 
+# of course this will fail if your local node isn't running.
+# this part grabs the 'Code hash' to use in the instantiate.
 echo;echo;echo "cargo contract upload......";echo;echo;
 cargo contract upload --suri //Alice 2>&1 | tee upload.log;
 code_hash=$(cat upload.log | tail -2 | grep "Code hash" | sed -e 's/^.*Code hash *//');
@@ -59,6 +71,7 @@ then
   exit 1;
 fi;
 
+# this part grabs the 'Contract' to use in the call(s).
 echo;echo;echo "cargo contract instantiate......";echo;echo;
 cargo contract instantiate \
   --gas 500000000000 \
@@ -100,6 +113,8 @@ then
     --contract $Contract
 fi;
 
+
+rm -f upload.log instantiate.log 2>&1;
 
 
 echo;
