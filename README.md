@@ -1,5 +1,11 @@
 # my-first-substrate-project-series-III-part-6
 
+### This project is part of a series and includes a video.
+
+See [Here](https://github.com/elicorrales/blockchain-tutorials/blob/main/README.md) for the overall document that
+refers to all the series.  
+  
+
 # Verify You are Indeed Calling Deployed(Uploaded) and Instantiated Contract Methods  
   
 We assume you have participated in [Series III - Substrate Blockchain Tutorial](https://github.com/elicorrales/blockchain-tutorials/blob/main/README.md#series-iii---substrate-blockchain-tutorial), [Part 5](https://github.com/elicorrales/my-first-substrate-project-series-III-part-5/blob/main/README.md) of this series and you know how to ```upload```, ```instantiate```, and ```call``` your contract.  
@@ -44,3 +50,7 @@ The only way we have interacted (briefly) with the contract was via the command-
 However, that way of doing things isn't very useful.  Not only do we not see any related output on the running node, but how do we retrieve anything that might be returned by calling a method on the contract?  
   
 
+# A Better (More Necessary) Way to Setup Our Client Sub-project  
+  
+ 
+  
