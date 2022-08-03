@@ -149,7 +149,7 @@ $ tree -L 1
 1 directory, 3 files
 ```
   
-Say your ```client.js`` has the following:  
+Say your ```client.js``` has the following:  
 ```
 const wsUrl = 'ws://localhost:9944';
 const { WsProvider, ApiPromise } = require('@polkadot/api');
