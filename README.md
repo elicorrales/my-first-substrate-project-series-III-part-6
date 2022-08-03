@@ -17,6 +17,14 @@ Rename the second method to any other name - how about ```saybye```.
         }
 ```
   
+Notice we added something the body:  a ```panic!(....)```.  
+  
+What is that?  
+  
+```Macro std::panic```:  
+> Panics the current thread.
+> This allows a program to terminate immediately and provide feedback to the caller of the program.  
+  
 Now, build it, then start up your local contracts node in one terminal and upload and instantiate your contract in another terminal.  
   
 Then call the ```sayhello```, and then the ```saybye```.  
